@@ -1,0 +1,180 @@
+:root {
+    --accent-color: #eb2741;
+    --lt-grey: #e8e9ec;
+    --text-color: #828896;
+    --alt-text-color: #59616c;
+}
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    overflow-x: none;
+}
+
+div.container {
+    padding: 10%;
+}
+
+div.container.left-parent {
+    flex: 0 0 50%;
+}
+
+div.container.right-parent {
+    flex: 1;
+    background-color: var(--accent-color);
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+div.right-parent>h1 {
+    color: var(--lt-grey);
+}
+
+div.right-parent>p {
+    color: var(--lt-grey);
+}
+
+form {
+    margin: 2rem 0;
+}
+
+label {
+    font-weight: 600;
+    color: var(--alt-text-color);
+}
+
+input[type="text"] {
+    width: 100%;
+    display: block;
+    margin: 1rem 0;
+    padding: 1rem;
+    font-weight: 500;
+    color: var(--text-color);
+    border-style: solid;
+    border-radius: 0.5rem;
+    border-color: var(--lt-grey);
+    outline: none;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus {
+    border-color: var(--accent-color);
+}
+
+button#btnSignOut, button[type="submit"] {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border-style: none;
+    color: rgb(240, 138, 60);
+    background-color: var(--accent-color);
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: capitalize;
+    box-sizing: border-box;
+    cursor: pointer;
+    outline: none;
+}
+
+div.right-parent button[type="submit"] {
+    color: var(--accent-color);
+    background-color: rgb(249, 242, 50);
+}
+
+div#error {
+    font-size: 0.7rem;
+    font-weight: 500;
+    line-height: 1rem;
+    color: #e01f1f;
+}
+
+div#result {
+    font-size: 2rem;
+    text-align: center;
+    color: rgb(233, 17, 17);
+}
+
+/* Media Queries */
+@media screen and (min-width: 320px) {
+    body {
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    body {
+        flex-direction: row;
+    }
+
+    div.container.left-parent {
+        flex: 50%;
+    }
+
+    div.container.right-parent {
+        flex: 50%;
+    }
+}
+
+
+/* Loading icon style rules */
+
+.lds-ring {
+    display: none;
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+}
+
+#fetchLoadingIcon div {
+    border: 4px solid var(--accent-color);
+    border-color: var(--accent-color) transparent transparent transparent;
+} 
+
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
